@@ -8,8 +8,11 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Quicksand&display=swap"
             rel="stylesheet"
           />
         </Head>

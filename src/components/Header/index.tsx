@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import usePersisted from 'hooks/usePersisted';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 import {
@@ -9,101 +10,84 @@ import {
   Button,
   useColorMode,
   useColorModeValue,
-  ColorMode,
-  ColorModeContext,
 } from '@chakra-ui/react';
+import Container from 'components/Container';
 
 const Header: React.FC = () => {
   const { toggleColorMode } = useColorMode();
-
   const [dark, setDark] = useState(false);
+
   const handleDarkMode = useCallback(() => {
     setDark(dark ? false : true);
+
     toggleColorMode();
   }, [toggleColorMode, setDark, dark]);
 
-  const colors = {
-    nav: useColorModeValue('whiteAlpha.900', 'gray.800'),
-  };
+  // const colors = {
+  //   nav: useColorModeValue('whiteAlpha.900', 'gray.800'),
+  // };
 
   return (
     <Flex
       as="header"
-      w="100%"
       h={['45px', '65px']}
-      position="fixed"
+      mt="10"
       align="center"
       justify="center"
-      mx="auto"
-      px="12"
-      bgColor={colors.nav}
+      bgColor="transparent"
     >
-      <Flex
-        w="100%"
-        h="100%"
-        maxW="1150px"
-        px="4"
-        align="center"
-        justify="space-between"
-      >
-        <Heading fontWeight="semibold" fontSize={['sm', 'md', 'xl']}>
-          Victor Samir
-        </Heading>
-
-        <Flex w="45%" justify="space-between" align="center">
-          <Heading
-            cursor="pointer"
-            fontWeight="semibold"
-            fontSize={['sm', 'md', 'lg']}
-            _hover={{ color: '#6B46C1' }}
-          >
-            Home
-          </Heading>
-          <Heading
-            cursor="pointer"
-            fontWeight="semibold"
-            fontSize={['sm', 'md', 'lg']}
-            _hover={{ color: '#6B46C1' }}
-          >
-            About
-          </Heading>
-          <Heading
-            cursor="pointer"
-            fontWeight="semibold"
-            fontSize={['sm', 'md', 'lg']}
-            _hover={{ color: '#6B46C1' }}
-          >
-            Services
-          </Heading>
-          <Heading
-            cursor="pointer"
-            fontWeight="semibold"
-            fontSize={['sm', 'md', 'lg']}
-            _hover={{ color: '#6B46C1' }}
-          >
-            Contactme
-          </Heading>
-          <Heading
-            cursor="pointer"
-            fontWeight="semibold"
-            fontSize={['sm', 'md', 'lg']}
-            _hover={{ color: '#6B46C1' }}
-          >
-            About
+      <Container>
+        <Flex w="100%" h="100%" align="center" justify="space-between">
+          <Heading fontWeight="semibold" fontSize={['sm', 'md', 'xl']}>
+            <Text as="span" color="primary">
+              {'</ '}
+            </Text>
+            Samir
+            <Text as="span" color="primary">
+              {' >'}
+            </Text>
           </Heading>
 
-          <Button
-            size="sm"
-            variant="ghost"
-            _focus={{
-              boxShadow: 'unset',
-            }}
-            onClick={handleDarkMode}
-          >
-            {!dark ? <MoonIcon /> : <SunIcon />}
-          </Button>
+          <Flex w="50%" justify="space-between" align="center">
+            <Text
+              className="active"
+              cursor="pointer"
+              fontSize={['sm', 'md', 'lg']}
+              _hover={{ color: 'primary' }}
+            >
+              Sobre
+            </Text>
+
+            <Text
+              cursor="pointer"
+              fontSize={['sm', 'md', 'lg']}
+              _hover={{ color: 'primary' }}
+            >
+              Skills
+            </Text>
+
+            <Text
+              cursor="pointer"
+              fontSize={['sm', 'md', 'lg']}
+              _hover={{ color: 'primary' }}
+            >
+              Laboratório
+            </Text>
+
+            <Text
+              cursor="pointer"
+              fontSize={['sm', 'md', 'lg']}
+              _hover={{ color: 'primary' }}
+            >
+              Contato
+            </Text>
+
+            <Button size="lg" variant="ghost" onClick={handleDarkMode}>
+              {dark ? <MoonIcon /> : <SunIcon />}
+            </Button>
+          </Flex>
         </Flex>
-      </Flex>
+      </Container>
     </Flex>
   );
 };
