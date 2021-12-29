@@ -46,7 +46,7 @@ const GlobalStyle = () => {
             }
 
             &::-webkit-scrollbar-thumb {
-              background-color: #66fcf1;
+              background-color: #dddddd;
               border-radius: 20px;
             }
           }
@@ -62,6 +62,12 @@ const GlobalStyle = () => {
 
             &:active {
               transform: scale(0.9);
+            }
+          }
+
+          .porfile {
+            img {
+              border-radius: 50% !important;
             }
           }
 

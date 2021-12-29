@@ -2,7 +2,13 @@ import React from 'react';
 
 import { Box, Button as Buttons } from '@chakra-ui/react';
 
-const Button = ({ children, colorTheme }) => {
+interface Props {
+  colorTheme: string;
+  onClick?: React.MouseEventHandler;
+  children: React.ReactNode;
+}
+
+const Button = ({ children, colorTheme, onClick }: Props) => {
   return (
     <>
       <Buttons
@@ -13,6 +19,7 @@ const Button = ({ children, colorTheme }) => {
         borderColor={colorTheme}
         color={colorTheme}
         bg="transparent"
+        onClick={onClick}
       >
         {children}
       </Buttons>

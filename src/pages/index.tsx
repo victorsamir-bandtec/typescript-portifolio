@@ -4,6 +4,9 @@ import Header from 'components/Header';
 
 import Container from 'components/Container';
 import Button from 'components/Button';
+import imgProfile from 'assets/Avatar.svg';
+// import imgProfile from 'assets/perfil2.png';
+
 import imgProgramming from 'assets/programming.svg';
 import imgProgrammingDark from 'assets/programmingDark.svg';
 import {
@@ -13,10 +16,12 @@ import {
   Heading,
   useColorModeValue,
   useColorMode,
+  VStack,
 } from '@chakra-ui/react';
+import Card from 'components/Card';
 
 const Home = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const color = {
     primary: useColorModeValue('secundary', 'primary'),
@@ -57,7 +62,15 @@ const Home = () => {
               das pessoas através de sites modernos.
             </Text>
 
-            <Button colorTheme={color.primary}>BAIXAR CURRÍCULO</Button>
+            <Button
+              colorTheme={color.primary}
+              onClick={() =>
+                (location.href =
+                  'https://download853.mediafire.com/xonfy67leoeg/o5j34norl02vg7g/curriculo.pdf')
+              }
+            >
+              BAIXAR CURRÍCULO
+            </Button>
           </Box>
 
           <Box w="50%">
@@ -67,6 +80,16 @@ const Home = () => {
               <Image src={imgProgramming} alt="ilustração" />
             )}
           </Box>
+        </Flex>
+
+        <Flex as="section" justify="space-between" align="center" mt="7rem">
+          <Box>
+            <VStack>
+              <Card colorTheme={color.primary}></Card>
+            </VStack>
+          </Box>
+
+          <Box></Box>
         </Flex>
       </Container>
 
