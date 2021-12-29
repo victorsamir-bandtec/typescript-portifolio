@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import Container from 'components/Container';
 
-const Header: React.FC = () => {
+const Header = ({ colorTheme }) => {
   const { toggleColorMode } = useColorMode();
   const [dark, setDark] = useState(false);
 
@@ -22,10 +22,6 @@ const Header: React.FC = () => {
 
     toggleColorMode();
   }, [toggleColorMode, setDark, dark]);
-
-  // const colors = {
-  //   nav: useColorModeValue('whiteAlpha.900', 'gray.800'),
-  // };
 
   return (
     <Flex
@@ -39,11 +35,11 @@ const Header: React.FC = () => {
       <Container>
         <Flex w="100%" h="100%" align="center" justify="space-between">
           <Heading fontWeight="semibold" fontSize={['sm', 'md', 'xl']}>
-            <Text as="span" color="primary">
+            <Text as="span" color={colorTheme}>
               {'</ '}
             </Text>
             Samir
-            <Text as="span" color="primary">
+            <Text as="span" color={colorTheme}>
               {' >'}
             </Text>
           </Heading>
@@ -53,7 +49,10 @@ const Header: React.FC = () => {
               className="active"
               cursor="pointer"
               fontSize={['sm', 'md', 'lg']}
-              _hover={{ color: 'primary' }}
+              _hover={{ color: colorTheme }}
+              _after={{
+                background: colorTheme,
+              }}
             >
               Sobre
             </Text>
@@ -61,7 +60,7 @@ const Header: React.FC = () => {
             <Text
               cursor="pointer"
               fontSize={['sm', 'md', 'lg']}
-              _hover={{ color: 'primary' }}
+              _hover={{ color: colorTheme }}
             >
               Skills
             </Text>
@@ -69,7 +68,7 @@ const Header: React.FC = () => {
             <Text
               cursor="pointer"
               fontSize={['sm', 'md', 'lg']}
-              _hover={{ color: 'primary' }}
+              _hover={{ color: colorTheme }}
             >
               Laboratório
             </Text>
@@ -77,7 +76,7 @@ const Header: React.FC = () => {
             <Text
               cursor="pointer"
               fontSize={['sm', 'md', 'lg']}
-              _hover={{ color: 'primary' }}
+              _hover={{ color: colorTheme }}
             >
               Contato
             </Text>
