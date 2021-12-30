@@ -4,11 +4,17 @@ import Header from 'components/Header';
 
 import Container from 'components/Container';
 import Button from 'components/Button';
-import imgProfile from 'assets/Avatar.svg';
-// import imgProfile from 'assets/perfil2.png';
+import Card from 'components/Card';
 
 import imgProgramming from 'assets/programming.svg';
 import imgProgrammingDark from 'assets/programmingDark.svg';
+import imgDesing from 'assets/desing.svg';
+import imgDesingDark from 'assets/desingDark.svg';
+import imgFront from 'assets/front.svg';
+import imgFrontDark from 'assets/frontDark.svg';
+import imgWork from 'assets/work.svg';
+import imgWorkDark from 'assets/workDark.svg';
+
 import {
   Box,
   Flex,
@@ -18,13 +24,13 @@ import {
   useColorMode,
   VStack,
 } from '@chakra-ui/react';
-import Card from 'components/Card';
 
 const Home = () => {
   const { colorMode } = useColorMode();
 
   const color = {
     primary: useColorModeValue('secundary', 'primary'),
+    bg: useColorModeValue('secundary', '#cccccc1c'),
   };
 
   return (
@@ -73,7 +79,7 @@ const Home = () => {
             </Button>
           </Box>
 
-          <Box w="50%">
+          <Box w="48%">
             {colorMode === 'light' ? (
               <Image src={imgProgrammingDark} alt="ilustração" />
             ) : (
@@ -82,14 +88,46 @@ const Home = () => {
           </Box>
         </Flex>
 
-        <Flex as="section" justify="space-between" align="center" mt="7rem">
-          <Box>
-            <VStack>
-              <Card colorTheme={color.primary}></Card>
+        <Flex as="section" justify="space-between" align="start" mt="7rem">
+          <Box w="48%">
+            <VStack spacing="1.5rem" align="stretch">
+              <Card
+                title="Desing"
+                description=" Criador de projetos digitais unicos."
+                projects="5 projetos"
+                img={imgDesing}
+                imgDark={imgDesingDark}
+                colorTheme={color.primary}
+                colorBg={color.bg}
+                selected={true}
+              ></Card>
+
+              <Card
+                title="Front-End"
+                description=" Desenvolvimento de aplicações web."
+                projects="8 projetos"
+                img={imgFront}
+                imgDark={imgFrontDark}
+                colorTheme={color.primary}
+                colorBg={color.bg}
+              ></Card>
+
+              <Card
+                title="Evolutix"
+                description="Desenvovedor front-end jr."
+                projects="2 projetos"
+                img={imgWork}
+                imgDark={imgWorkDark}
+                colorTheme={color.primary}
+                colorBg={color.bg}
+              ></Card>
             </VStack>
           </Box>
 
-          <Box></Box>
+          <Box>
+            <Text fontSize="sm">Introdução</Text>
+            <Heading mt="1rem">Ola, eu sou o Victor Samir</Heading>
+          </Box>
         </Flex>
       </Container>
 
