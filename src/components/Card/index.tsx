@@ -1,4 +1,11 @@
-import { Box, Flex, Heading, Text, useColorMode } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  Text,
+  useColorMode,
+} from '@chakra-ui/react';
 import React from 'react';
 import Image from 'next/image';
 
@@ -11,6 +18,8 @@ interface Props {
   projects: string;
   img: any;
   imgDark: any;
+  children: any;
+  onClick?: React.MouseEventHandler;
 }
 
 const Card = ({
@@ -22,6 +31,8 @@ const Card = ({
   projects,
   img,
   imgDark,
+  children,
+  onClick,
 }: Props) => {
   const { colorMode } = useColorMode();
 
@@ -30,19 +41,20 @@ const Card = ({
       <Flex
         w="100%"
         h="15rem"
-        p="2rem 3rem"
+        p="2rem 2.5rem"
         justify="space-between"
         align="start"
         borderRadius="0.8rem"
         boxShadow="3px 5px 25px #00000030"
         cursor="pointer"
+        onClick={onClick}
         aria-selected={selected}
+        transition="all 130ms ease-in-out"
         _selected={{
           border: '1px solid',
           borderColor: colorTheme,
         }}
         _hover={{
-          boxShadow: '3px 5px 35px #00000060',
           bg: colorBg,
         }}
       >
@@ -60,13 +72,19 @@ const Card = ({
           </Text>
         </Box>
 
-        <Box w="3rem" mt="1rem">
-          {colorMode === 'light' ? (
-            <Image src={img} alt="desing" />
-          ) : (
-            <Image src={imgDark} alt="desing" />
-          )}
-        </Box>
+        <Flex flexDir="column" align="end">
+          <Box w="3rem" mt="1rem">
+            {colorMode === 'light' ? (
+              <Image src={img} alt="desing" />
+            ) : (
+              <Image src={imgDark} alt="desing" />
+            )}
+          </Box>
+
+          <HStack w="100%" mt="4rem" spacing="1.5rem" opacity="0.8">
+            {children}
+          </HStack>
+        </Flex>
       </Flex>
     </>
   );

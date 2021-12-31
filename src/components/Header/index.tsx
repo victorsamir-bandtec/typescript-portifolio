@@ -10,6 +10,7 @@ import {
   Button,
   useColorMode,
   useColorModeValue,
+  Link,
 } from '@chakra-ui/react';
 import Container from 'components/Container';
 
@@ -58,6 +59,8 @@ const Header = ({ colorTheme }) => {
             </Text>
 
             <Text
+              as="a"
+              href="#skils"
               cursor="pointer"
               fontSize={['sm', 'md', 'lg']}
               _hover={{ color: colorTheme }}
