@@ -65,12 +65,6 @@ const GlobalStyle = () => {
             }
           }
 
-          .porfile {
-            img {
-              border-radius: 50% !important;
-            }
-          }
-
           .active::after {
             content: '';
             position: absolute;

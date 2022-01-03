@@ -107,11 +107,11 @@ const Home = () => {
 
         <span id="skils"></span>
 
-        <Flex as="section" justify="space-between" align="start" mt="7rem">
+        <Flex as="section" justify="space-between" align="stretch" mt="7rem">
           <Box w="48%">
-            <VStack spacing="1.5rem" align="stretch">
+            <VStack spacing="2rem" align="stretch">
               <Card
-                title="Desing"
+                title="Design"
                 description=" Criador de projetos digitais unicos."
                 projects="5 projetos"
                 img={imgDesing}
@@ -200,16 +200,97 @@ const Home = () => {
             </VStack>
           </Box>
 
-          <Box>
+          <Box w="40%">
             {card === 1 && (
               <>
-                <Heading>Ola, eu sou o Victor Samir</Heading>
+                <Text fontSize="md">Design</Text>
+
+                <Heading fontSize="3xl" fontWeight="semibold" my="3.5rem">
+                  O que é o design ?
+                </Heading>
+
+                <Text fontSize="lg" textAlign="justify" fontWeight="semibold">
+                  O Design é responsável por toda área interfaces digitais, ele
+                  que deixa a sua aplicação única e especial.
+                </Text>
+
+                <Text fontSize="md" textAlign="justify" mt="3.5rem">
+                  Quando eu comecei nessa área de{' '}
+                  <strong>desenvolvimento web</strong> uma das primeiras coisas
+                  que comecei a estudar foi justamente essa parte de desing,
+                  fiquei impressionado em como isso pode mudar totalmente uma
+                  aplicação, então me aprofundei no assunto de
+                  <strong> UX</strong> , para desenvolver melhores interfaces,
+                  me aprofundei no
+                  <Text as="span" color={color.primary} fontWeight="semibold">
+                    {''} Figma {''}
+                  </Text>
+                  (ferramenta para criação de layout), e construí diversos
+                  projetos nele, sempre com um padrão elevado de mercado e um
+                  estilo único para cada cliente.
+                </Text>
               </>
             )}
 
-            {card === 2 && <></>}
+            {card === 2 && (
+              <>
+                <Text fontSize="md">Front-End</Text>
 
-            {card === 3 && <></>}
+                <Heading fontSize="3xl" fontWeight="semibold" my="3.5rem">
+                  O que é o front-end ?
+                </Heading>
+
+                <Text fontSize="lg" textAlign="justify" fontWeight="semibold">
+                  Ele pega toda a interface desenvolvida no design e converte em
+                  código para que o usuário possa interagir.
+                </Text>
+
+                <Text fontSize="md" textAlign="justify" mt="3.5rem">
+                  Após entender como funcionava a parte de prototipação de
+                  layout, fui correndo ver como eu colocaria tudo isso em código
+                  para que pessoas do mundo todo pudessem interagir com minhas
+                  aplicações, então com meus estudos na faculdade{' '}
+                  <strong>SPTECH, </strong> onde cursei análise e
+                  desenvolvimento de sistemas, consegui colocar tudo isso em
+                  prática e acabei me apaixonando por essa área, hoje em dia
+                  desenvolvo aplicações usando:
+                  <Text as="span" color={color.primary} fontWeight="semibold">
+                    {''} html, css, sass, javascript, typescript, react js e
+                    angular.
+                  </Text>
+                </Text>
+              </>
+            )}
+
+            {card === 3 && (
+              <>
+                <Text fontSize="md">Evolutix</Text>
+
+                <Heading fontSize="3xl" fontWeight="semibold" my="3.5rem">
+                  O que é a Evolutix ?
+                </Heading>
+
+                <Text fontSize="lg" textAlign="justify" fontWeight="semibold">
+                  Ela é empresa na qual estou trabalhando atualmente, como
+                  desenvolvedor front-end jr.
+                </Text>
+
+                <Text fontSize="md" textAlign="justify" mt="3.5rem">
+                  Comecei no mercado de trabalho como estagiário da{' '}
+                  <strong>Stefanini Brasil</strong> , uma grande e excelente
+                  empresa onde desenvolvi diversas habilidades e boas práticas
+                  na programação, atuei nesta empresa por volta de 1 ano e meio,
+                  após isso consegui alcançar o cargo em que estou hoje
+                  desenvolvedor jr na <strong>Evolutix</strong> , uma companhia
+                  em expansão exponencial e tem uma grande proposta para o
+                  futuro. Nela trabalho com aplicações que já estão sendo
+                  colocadas em produção, atuo nas linguagens:
+                  <Text as="span" color={color.primary} fontWeight="semibold">
+                    {''} html, css, sass, javascript, typescript e angular.
+                  </Text>
+                </Text>
+              </>
+            )}
           </Box>
         </Flex>
       </Container>

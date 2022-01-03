@@ -12,14 +12,14 @@ import Image from 'next/image';
 interface Props {
   colorTheme: string;
   colorBg: string;
-  selected?: boolean;
+  selected: boolean;
   title: string;
   description: string;
   projects: string;
   img: any;
   imgDark: any;
-  children: any;
-  onClick?: React.MouseEventHandler;
+  children: React.ReactNode;
+  onClick: React.MouseEventHandler;
 }
 
 const Card = ({
@@ -49,9 +49,10 @@ const Card = ({
         cursor="pointer"
         onClick={onClick}
         aria-selected={selected}
-        transition="all 130ms ease-in-out"
+        transition="all 100ms ease-in-out"
         _selected={{
           border: '1px solid',
+          transform: 'scale(1.025)',
           borderColor: colorTheme,
         }}
         _hover={{

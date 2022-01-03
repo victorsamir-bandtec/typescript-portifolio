@@ -2,16 +2,7 @@ import { useCallback, useState } from 'react';
 import usePersisted from 'hooks/usePersisted';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-import {
-  Box,
-  Flex,
-  Text,
-  Heading,
-  Button,
-  useColorMode,
-  useColorModeValue,
-  Link,
-} from '@chakra-ui/react';
+import { Flex, Text, Heading, Button, useColorMode } from '@chakra-ui/react';
 import Container from 'components/Container';
 
 const Header = ({ colorTheme }) => {
