@@ -60,6 +60,8 @@ const Header = ({ colorTheme }) => {
             </Text>
 
             <Text
+              as="a"
+              href="#laboratorio"
               cursor="pointer"
               fontSize={['sm', 'md', 'lg']}
               _hover={{ color: colorTheme }}

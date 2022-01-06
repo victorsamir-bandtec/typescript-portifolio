@@ -65,6 +65,23 @@ const GlobalStyle = () => {
             }
           }
 
+          #img {
+            border-radius: 5px !important;
+          }
+
+          .work::before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: -10px;
+            right: 20px;
+
+            width: 30rem;
+            height: 1rem;
+
+            border-radius: 1rem 1rem 0 0;
+          }
+
           .active::after {
             content: '';
             position: absolute;

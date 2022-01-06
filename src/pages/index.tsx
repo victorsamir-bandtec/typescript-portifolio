@@ -24,6 +24,7 @@ import imgSass from 'assets/sass.png';
 import imgReact from 'assets/react.png';
 import imgAngular from 'assets/angular.png';
 import imgFigma from 'assets/figma.png';
+import imgHyper from 'assets/hyper.png';
 
 import {
   Box,
@@ -35,6 +36,7 @@ import {
   VStack,
   HStack,
 } from '@chakra-ui/react';
+import Works from 'components/Works';
 
 const Home = () => {
   const [card, setCard] = useState(1);
@@ -106,8 +108,7 @@ const Home = () => {
         </Flex>
 
         <span id="skils"></span>
-
-        <Flex as="section" justify="space-between" align="stretch" mt="7rem">
+        <Flex as="section" justify="space-between" align="stretch" my="7rem">
           <Box w="48%">
             <VStack spacing="2rem" align="stretch">
               <Card
@@ -286,12 +287,68 @@ const Home = () => {
                   futuro. Nela trabalho com aplicações que já estão sendo
                   colocadas em produção, atuo nas linguagens:
                   <Text as="span" color={color.primary} fontWeight="semibold">
-                    {''} html, css, sass, javascript, typescript e angular.
+                    {''} html, css, sass, typescript e angular.
                   </Text>
                 </Text>
               </>
             )}
           </Box>
+        </Flex>
+
+        <span id="laboratorio"></span>
+        <Flex
+          as="section"
+          flexDir="column"
+          justify="start"
+          align="center"
+          wrap="wrap"
+          mt="11rem"
+          py="2rem"
+          minH="100vh"
+        >
+          <Box textAlign="center" mb="10rem">
+            <Heading
+              fontSize="4xl"
+              letterSpacing="0.2rem"
+              fontWeight="semibold"
+            >
+              Últimos trabalhos
+            </Heading>
+
+            <Text fontSize="lg">Perfeitas soluções digitais.</Text>
+          </Box>
+
+          <HStack w="100%" spacing="6rem">
+            <Works
+              title="Hyper Xpress"
+              description="Um e-commerce foconado na compra e troca de roupas usadas, um basar digital."
+              language1="React"
+              language2="JS"
+              language3="Styled Components"
+              img={imgHyper}
+              colorTheme={color.primary}
+            ></Works>
+
+            <Works
+              title="Hyper Xpress"
+              description="Um e-commerce foconado na compra e troca de roupas usadas, um basar digital."
+              language1="React"
+              language2="JS"
+              language3="Styled Components"
+              img={imgHyper}
+              colorTheme={color.primary}
+            ></Works>
+
+            <Works
+              title="Hyper Xpress"
+              description="Um e-commerce foconado na compra e troca de roupas usadas, um basar digital."
+              language1="React"
+              language2="JS"
+              language3="Styled Components"
+              img={imgHyper}
+              colorTheme={color.primary}
+            ></Works>
+          </HStack>
         </Flex>
       </Container>
 
