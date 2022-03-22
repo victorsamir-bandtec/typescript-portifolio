@@ -4,51 +4,45 @@ import Image from 'next/image';
 import { Box, Flex, Heading, HStack, Text } from '@chakra-ui/react';
 
 interface Props {
-  colorTheme: string;
-  title: string;
-  language1: string;
-  language2: string;
-  language3: string;
-  description: string;
   img: any;
+  title: string;
+  colorTheme: string;
+  colorBg: string;
+  description: string;
   children?: React.ReactNode;
-  onClick?: React.MouseEventHandler;
 }
 
 const Works = ({
-  colorTheme,
-  title,
-  language1,
-  language2,
-  language3,
-  description,
   img,
+  title,
   children,
-  onClick,
+  colorTheme,
+  description,
+  colorBg,
 }: Props) => {
   return (
     <>
       <Flex
         className="work"
         position="relative"
-        w="30%"
+        w="100%"
         h="60vh"
         p="2rem 1rem"
         flexDir="column"
-        align="start"
+        align="center"
         justify="start"
+        textAlign="center"
         borderRadius="0.5rem"
-        boxShadow="2xl"
-        bg="blackAlpha.400"
+        boxShadow="3px 5px 15px #00000030"
         _before={{
           background: colorTheme,
         }}
       >
-        <Box>
-          <Image id="img" src={img} alt="work" />
+        <Box borderBottom="1px solid" borderColor={colorTheme}>
+          <Image id="imgWorks" src={img} alt="work" />
         </Box>
 
-        <Heading fontSize="2xl" mt="5rem">
+        <Heading fontSize="2xl" mt="5rem" color={colorTheme}>
           {title}
         </Heading>
 
@@ -57,40 +51,23 @@ const Works = ({
         </Text>
 
         <Flex
+          className="workContent"
+          pos="absolute"
+          top="0"
+          left="0"
           w="100%"
-          h="10rem"
-          px="1rem"
-          justify="space-between"
+          h="100%"
+          p="2rem 1rem"
+          flexDir="column"
           align="center"
+          justify="start"
+          borderRadius="0.5rem"
+          opacity="0"
+          visibility="hidden"
+          cursor="default"
+          bg={colorBg}
         >
-          {/* <HStack>
-            <Text
-              fontSize="1.2rem"
-              p="0.4rem 0.5rem"
-              borderRadius="0.5rem"
-              bg="blackAlpha.500"
-            >
-              {language1}
-            </Text>
-
-            <Text
-              fontSize="1.2rem"
-              p="0.4rem 0.5rem"
-              borderRadius="0.5rem"
-              bg="blackAlpha.500"
-            >
-              {language2}
-            </Text>
-
-            <Text
-              fontSize="1.2rem"
-              p="0.4rem 0.5rem"
-              borderRadius="0.5rem"
-              bg="blackAlpha.500"
-            >
-              {language3}
-            </Text>
-          </HStack> */}
+          {children}
         </Flex>
       </Flex>
     </>

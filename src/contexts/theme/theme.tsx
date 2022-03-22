@@ -65,21 +65,40 @@ const GlobalStyle = () => {
             }
           }
 
-          #img {
-            border-radius: 5px !important;
+          #imgWorks {
+            border-radius: 5px;
           }
 
-          .work::before {
-            content: '';
-            position: absolute;
-            display: block;
-            top: -10px;
-            right: 20px;
+          #imgCircle {
+            width: 16rem !important;
+            height: 16rem !important;
 
-            width: 30rem;
-            height: 1rem;
+            min-height: 0 !important ;
+            min-width: 0 !important ;
+            border-radius: 50%;
+          }
 
-            border-radius: 1rem 1rem 0 0;
+          .work {
+            &:hover {
+              .workContent {
+                opacity: 1;
+                visibility: visible;
+                transition: all 200ms ease-in-out;
+              }
+            }
+
+            /* &::before {
+              content: '';
+              position: absolute;
+              display: block;
+              top: -10px;
+              right: 13px;
+
+              width: 34rem;
+              height: 1rem;
+
+              border-radius: 1rem 1rem 0 0;
+            } */
           }
 
           .active::after {

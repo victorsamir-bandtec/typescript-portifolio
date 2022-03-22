@@ -24,7 +24,14 @@ import imgSass from 'assets/sass.png';
 import imgReact from 'assets/react.png';
 import imgAngular from 'assets/angular.png';
 import imgFigma from 'assets/figma.png';
+import imgGit from 'assets/git.svg';
+import imgGitDark from 'assets/gitDark.svg';
+import imgEmail from 'assets/mail.svg';
+import imgEmailDark from 'assets/mailDark.svg';
+import imgLinkedin from 'assets/linkedin.svg';
+import imgLinkedinDark from 'assets/linkedinDark.svg';
 import imgHyper from 'assets/hyper.png';
+import imgPerfil from 'assets/perfil.jpeg';
 
 import {
   Box,
@@ -35,6 +42,9 @@ import {
   useColorMode,
   VStack,
   HStack,
+  Grid,
+  GridItem,
+  Circle,
 } from '@chakra-ui/react';
 import Works from 'components/Works';
 
@@ -44,7 +54,8 @@ const Home = () => {
   const { colorMode } = useColorMode();
   const color = {
     primary: useColorModeValue('secundary', 'primary'),
-    bg: useColorModeValue('#b8b8b81a', '#c0c0c01c'),
+    hover: useColorModeValue('#b8b8b81a', '#c0c0c01c'),
+    bg: useColorModeValue('#fff', '#202833'),
   };
 
   const handleCard = (cardNumber: number) => {
@@ -118,7 +129,7 @@ const Home = () => {
                 img={imgDesing}
                 imgDark={imgDesingDark}
                 colorTheme={color.primary}
-                colorBg={color.bg}
+                colorBg={color.hover}
                 selected={card === 1}
                 onClick={() => setCard(1)}
               >
@@ -134,7 +145,7 @@ const Home = () => {
                 img={imgFront}
                 imgDark={imgFrontDark}
                 colorTheme={color.primary}
-                colorBg={color.bg}
+                colorBg={color.hover}
                 selected={card === 2}
                 onClick={() => setCard(2)}
               >
@@ -174,7 +185,7 @@ const Home = () => {
                 img={imgWork}
                 imgDark={imgWorkDark}
                 colorTheme={color.primary}
-                colorBg={color.bg}
+                colorBg={color.hover}
                 selected={card === 3}
                 onClick={() => setCard(3)}
               >
@@ -203,7 +214,7 @@ const Home = () => {
 
           <Box w="40%">
             {card === 1 && (
-              <>
+              <Box className="animation-fade">
                 <Text fontSize="md">Design</Text>
 
                 <Heading fontSize="3xl" fontWeight="semibold" my="3.5rem">
@@ -230,11 +241,11 @@ const Home = () => {
                   projetos nele, sempre com um padrão elevado de mercado e um
                   estilo único para cada cliente.
                 </Text>
-              </>
+              </Box>
             )}
 
             {card === 2 && (
-              <>
+              <Box className="animation-fade">
                 <Text fontSize="md">Front-End</Text>
 
                 <Heading fontSize="3xl" fontWeight="semibold" my="3.5rem">
@@ -260,11 +271,11 @@ const Home = () => {
                     angular.
                   </Text>
                 </Text>
-              </>
+              </Box>
             )}
 
             {card === 3 && (
-              <>
+              <Box className="animation-fade">
                 <Text fontSize="md">Evolutix</Text>
 
                 <Heading fontSize="3xl" fontWeight="semibold" my="3.5rem">
@@ -290,7 +301,7 @@ const Home = () => {
                     {''} html, css, sass, typescript e angular.
                   </Text>
                 </Text>
-              </>
+              </Box>
             )}
           </Box>
         </Flex>
@@ -318,38 +329,261 @@ const Home = () => {
             <Text fontSize="lg">Perfeitas soluções digitais.</Text>
           </Box>
 
-          <HStack w="100%" spacing="6rem">
+          <Grid
+            gap="3rem"
+            templateColumns="repeat(auto-fill, minmax(346px, 1fr));"
+            justifyContent="center"
+          >
             <Works
               title="Hyper Xpress"
-              description="Um e-commerce foconado na compra e troca de roupas usadas, um basar digital."
-              language1="React"
-              language2="JS"
-              language3="Styled Components"
+              description="Um e-commerce foconado na compra e troca de roupas usadas."
               img={imgHyper}
               colorTheme={color.primary}
-            ></Works>
+              colorBg={color.bg}
+            >
+              <Flex
+                flexDir="column"
+                align="center"
+                justify="stretch"
+                textAlign="justify"
+              >
+                <Heading
+                  fontSize="2xl"
+                  letterSpacing="0.2rem"
+                  my="2.5rem"
+                  color={color.primary}
+                >
+                  Hyper Xpress
+                </Heading>
+
+                <Text w="80%" fontSize="md" mb="3rem">
+                  Esse projeto consiste em um e-commerce de roupas usadas, ou
+                  seja um brecho on-line onde os usuarios possam anunciar,
+                  comprar e até mesmo trocar peças de roupas e calçados, foi uma
+                  plataforma desenvolvida com meu grupo de TCC.
+                </Text>
+
+                <HStack spacing="1rem" wrap="wrap">
+                  <Text
+                    fontSize="sm"
+                    p="0.5rem 1rem"
+                    borderRadius="0.5rem"
+                    border="1px solid"
+                    borderColor={color.primary}
+                    color={color.primary}
+                  >
+                    React js
+                  </Text>
+
+                  <Text
+                    fontSize="sm"
+                    p="0.5rem 1rem"
+                    borderRadius="0.5rem"
+                    border="1px solid"
+                    borderColor={color.primary}
+                    color={color.primary}
+                  >
+                    JS
+                  </Text>
+
+                  <Text
+                    fontSize="sm"
+                    p="0.5rem 1rem"
+                    borderRadius="0.5rem"
+                    border="1px solid"
+                    borderColor={color.primary}
+                    color={color.primary}
+                  >
+                    Styled Components
+                  </Text>
+                </HStack>
+              </Flex>
+            </Works>
 
             <Works
               title="Hyper Xpress"
-              description="Um e-commerce foconado na compra e troca de roupas usadas, um basar digital."
-              language1="React"
-              language2="JS"
-              language3="Styled Components"
+              description="Um e-commerce foconado na compra e troca de roupas usadas."
               img={imgHyper}
               colorTheme={color.primary}
-            ></Works>
+              colorBg={color.bg}
+            >
+              <Flex
+                flexDir="column"
+                align="center"
+                justify="stretch"
+                textAlign="justify"
+              >
+                <Heading fontSize="2xl" letterSpacing="0.2rem" my="2.5rem">
+                  Hyper Xpress
+                </Heading>
+
+                <Text w="80%" fontSize="md" mb="3rem">
+                  Esse projeto consiste em um e-commerce de roupas usadas, ou
+                  seja um brecho on-line onde os usuarios possam anunciar,
+                  comprar e até mesmo trocar peças de roupas e calçados, foi uma
+                  plataforma desenvolvida com meu grupo de TCC.
+                </Text>
+
+                <HStack spacing="1rem" wrap="wrap">
+                  <Text
+                    fontSize="sm"
+                    p="0.5rem 1rem"
+                    borderRadius="0.5rem"
+                    border="1px solid"
+                    borderColor={color.primary}
+                    color={color.primary}
+                  >
+                    React js
+                  </Text>
+
+                  <Text
+                    fontSize="sm"
+                    p="0.5rem 1rem"
+                    borderRadius="0.5rem"
+                    border="1px solid"
+                    borderColor={color.primary}
+                    color={color.primary}
+                  >
+                    JS
+                  </Text>
+
+                  <Text
+                    fontSize="sm"
+                    p="0.5rem 1rem"
+                    borderRadius="0.5rem"
+                    border="1px solid"
+                    borderColor={color.primary}
+                    color={color.primary}
+                  >
+                    Styled Components
+                  </Text>
+                </HStack>
+              </Flex>
+            </Works>
 
             <Works
               title="Hyper Xpress"
-              description="Um e-commerce foconado na compra e troca de roupas usadas, um basar digital."
-              language1="React"
-              language2="JS"
-              language3="Styled Components"
+              description="Um e-commerce foconado na compra e troca de roupas usadas."
               img={imgHyper}
               colorTheme={color.primary}
-            ></Works>
-          </HStack>
+              colorBg={color.bg}
+            >
+              <Flex
+                flexDir="column"
+                align="center"
+                justify="stretch"
+                textAlign="justify"
+              >
+                <Heading fontSize="2xl" letterSpacing="0.2rem" my="2.5rem">
+                  Hyper Xpress
+                </Heading>
+
+                <Text w="80%" fontSize="md" mb="3rem">
+                  Esse projeto consiste em um e-commerce de roupas usadas, ou
+                  seja um brecho on-line onde os usuarios possam anunciar,
+                  comprar e até mesmo trocar peças de roupas e calçados, foi uma
+                  plataforma desenvolvida com meu grupo de TCC.
+                </Text>
+
+                <HStack spacing="1rem" wrap="wrap">
+                  <Text
+                    fontSize="sm"
+                    p="0.5rem 1rem"
+                    borderRadius="0.5rem"
+                    border="1px solid"
+                    borderColor={color.primary}
+                    color={color.primary}
+                  >
+                    React js
+                  </Text>
+
+                  <Text
+                    fontSize="sm"
+                    p="0.5rem 1rem"
+                    borderRadius="0.5rem"
+                    border="1px solid"
+                    borderColor={color.primary}
+                    color={color.primary}
+                  >
+                    JS
+                  </Text>
+
+                  <Text
+                    fontSize="sm"
+                    p="0.5rem 1rem"
+                    borderRadius="0.5rem"
+                    border="1px solid"
+                    borderColor={color.primary}
+                    color={color.primary}
+                  >
+                    Styled Components
+                  </Text>
+                </HStack>
+              </Flex>
+            </Works>
+          </Grid>
         </Flex>
+
+        <span id="about"></span>
+        <Grid
+          mt="5rem"
+          templateColumns="1fr 2fr"
+          justifyItems="center"
+          justifyContent="center"
+        >
+          <Box>
+            <Circle
+              w="18rem"
+              h="18rem"
+              border="4px solid"
+              borderColor={color.primary}
+            >
+              <Image id="imgCircle" src={imgPerfil} alt="gitHub" />
+            </Circle>
+            <Heading mt="1rem" textAlign="center" fontSize="2xl">
+              Victor Samir
+            </Heading>
+
+            {colorMode === 'light' ? (
+              <Flex justify="space-around" mt="2rem" cursor="pointer">
+                <Image src={imgGit} alt="gitHub" />
+                <Image src={imgLinkedin} alt="linkeding" />
+                <Image src={imgEmail} alt="email" />
+              </Flex>
+            ) : (
+              <Flex justify="space-around" mt="2rem" cursor="pointer">
+                <Image src={imgGitDark} alt="gitHub" />
+                <Image src={imgLinkedinDark} alt="linkeding" />
+                <Image src={imgEmailDark} alt="email" />
+              </Flex>
+            )}
+          </Box>
+
+          <Box w="80%">
+            <Heading mb="1rem" fontSize="3xl">
+              Sobre
+            </Heading>
+            <Text mb="3rem" fontWeight="bold" fontSize="xl">
+              Conheça um pouco sobre mim
+            </Text>
+            <Text lineHeight="3rem" fontSize="md">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ad
+              voluptate iste harum, doloribus suscipit quae modi ex nesciunt
+              accusantium repellendus maiores rerum alias perspiciatis aliquam a
+              deleniti eveniet dolorum. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Ipsam ad voluptate iste harum, doloribus
+              suscipit quae modi ex nesciunt accusantium repellendus maiores
+              rerum alias perspiciatis aliquam a deleniti eveniet dolorum. Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Ipsam ad
+              voluptate iste harum, doloribus suscipit quae modi ex nesciunt
+              accusantium repellendus maiores rerum alias perspiciatis aliquam a
+              deleniti eveniet dolorum. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Ipsam ad voluptate iste harum, doloribus
+              suscipit quae modi ex nesciunt accusantium repellendus maiores
+              rerum alias perspiciatis aliquam a deleniti eveniet dolorum.
+            </Text>
+          </Box>
+        </Grid>
       </Container>
 
       <Flex minH="100vh"></Flex>
